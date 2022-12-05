@@ -18,16 +18,13 @@ class Signin extends StatelessWidget {
             Container(
               padding: const EdgeInsets.fromLTRB(10, 100, 10, 0),
               margin: const EdgeInsets.all(15),
-              
               child: const Text(
-                
                 "SOS",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 102,
                   fontWeight: FontWeight.bold,
                 ),
-                
               ),
             ),
             Container(
@@ -88,7 +85,7 @@ class Signin extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return const Signin();
+                      return const Home();
                     }));
                   },
                   child: const Text("Login",
@@ -126,4 +123,6 @@ class Signin extends StatelessWidget {
       ),
     );
   }
+
+
 }
