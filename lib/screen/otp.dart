@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sos/screen/signin.dart';
 import 'package:sos/screen/signup.dart';
 
 class OTP extends StatefulWidget {
