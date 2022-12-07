@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sos/screen/signup.dart';
+import 'package:sos/src/screen/signup.dart';
 
 class OTP extends StatefulWidget {
   const OTP({super.key});
@@ -215,8 +215,10 @@ class _OTPState extends State<OTP> {
                             onPressed: () {},
                           ),
                         ]),
+                  
                   ),
                 ]),
+         
           ),
         ),
       ),

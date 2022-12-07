@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sos/screen/home.dart';
-import 'package:sos/screen/signin.dart';
+import 'package:sos/src/screen/signin.dart';
+
 
 class Index extends StatefulWidget {
   const Index({super.key});

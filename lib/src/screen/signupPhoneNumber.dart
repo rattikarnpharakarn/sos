@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sos/screen/otp.dart';
+
+import 'otp.dart';
+
 
 class SignupPhoneNumber extends StatefulWidget {
   const SignupPhoneNumber({super.key});
