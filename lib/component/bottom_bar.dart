@@ -11,16 +11,18 @@ class Bottombar extends StatefulWidget {
 }
 
 class _BottombarState extends State<Bottombar> {
- final PageController controller = PageController();
+  final PageController controller = PageController();
 
   @override
   void dispose() {
     super.dispose();
   }
+
+  @override
   Widget build(BuildContext context) {
-    
-    return Scaffold(
-      bottomNavigationBar: BottomBarBubble(
+    return Container(
+      padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+      child: BottomBarBubble(
         items: [
           BottomBarItem(
             iconData: Icons.home,
@@ -47,7 +49,6 @@ class _BottombarState extends State<Bottombar> {
           // implement your select function here
         },
       ),
- 
     );
   }
 }

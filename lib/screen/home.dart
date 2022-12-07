@@ -22,11 +22,30 @@ class _HomeState extends State<Home> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
-       bottomNavigationBar:Bottombar()
-      
+      bottomNavigationBar: const Bottombar(),
+      body: PageView(
+        controller: controller,
+        children: const <Widget>[
+          Center(
+            child: Text('First Page'),
+          ),
+          Center(
+            child: Text('Second Page'),
+          ),
+          Center(
+            child: Text('Third Page'),
+          ),
+          Center(
+            child: Text('Four Page'),
+          ),
+          Center(
+            child: Text('Five Page'),
+          ),
+        ],
+      ),
     );
   }
 }
