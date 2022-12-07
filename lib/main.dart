@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sos/screen/home.dart';
-import 'package:sos/screen/index.dart';
-import 'screen/signup.dart';
+
 
 import 'package:sos/src/screen/index.dart';
 

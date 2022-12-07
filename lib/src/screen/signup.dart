@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sos/component/form_data.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:sos/src/component/form_data.dart';
+
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
