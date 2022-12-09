@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -5,6 +6,7 @@ import 'package:http/http.dart';
 import 'dart:convert' as convert;
 
 import 'package:http/http.dart' as http;
+import 'package:file/local.dart';
 import 'package:sos/src/screen/signupPhoneNumber.dart';
 
 class Signin extends StatefulWidget {
@@ -28,8 +30,8 @@ class _SigninState extends State<Signin> {
   bool _isObscure = true;
 
   void _toggle() {
-    print('_phone : $_phone');
-    print('_pass : $_pass');
+    log('_phone : $_phone');
+    log('_pass : $_pass');
 
     setState(() {
       _isObscure = !_isObscure;
@@ -59,27 +61,48 @@ class _SigninState extends State<Signin> {
     super.dispose();
   }
 
-  Future<http.Response> siging(String phone, String pass) {
-        print('response  : $phone');
-    return http.post(
-      Uri.parse('http://localhost:80/SosApp/signIn'),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: convert
-          .jsonEncode(<String, String>{'username': phone, 'password': pass}),
+  // Future<http.Response> siging(String phone, String pass) {
+  //   final url = "http://sos-app.thddns.net:7330/SosApp/signIn";
+  //   log('response  : $phone');
+  //   log('response  : $pass');
 
-    );
+  //   Map<String, String> boby = {
+  //     'username': '0815476439',
+  //     'password': '123456789'
+  //   };
+  //   String jsonString = convert.json.encode(boby);
 
-  }
+  //   return http.post(Uri.parse(url),
+  //       headers: <String, String>{
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: jsonString);
+  // }
+
+  // static const String _baseUrl = "http://sos-app.thddns.net:7330/SosApp/signIn";
 
   onLogin() async {
-    String phone = _controllerPhone.text;
-    String pass = _controllerPass.text;
-    http.Response response = await siging('0815476439', 'BELLkub4424506');
-    print('response  : $response');
+    try {
+      final url = "http://sos-app.thddns.net:3770/SosApp/signIn";
+      // final url = "http://localhost:8123//SosApp/signIn";
+      // const url = "http://192.168.16.1:8123//SosApp/signIn";
+
+      String phone = _controllerPhone.text;
+      String pass = _controllerPass.text;
+      Map<String, String> boby = {'username': phone, 'password': pass};
+      String jsonString = convert.json.encode(boby);
+      var response = await post(Uri.parse(url),
+          headers: <String, String>{
+            'Content-Type': 'application/json',
+          },
+          body: jsonString);
+      log(response.body);
+    } catch (e) {
+      log(e.toString());
+    }
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: const Color.fromARGB(248, 228, 44, 44),
@@ -159,8 +182,7 @@ class _SigninState extends State<Signin> {
                             borderRadius: BorderRadius.circular(15.29),
                             side: const BorderSide(
                                 width: 3, color: Colors.white)))),
-                    onPressed:
-                        onLogin,
+                    onPressed: onLogin,
                     child: const Text("Login",
                         style: TextStyle(color: Colors.black, fontSize: 24)),
                   ),

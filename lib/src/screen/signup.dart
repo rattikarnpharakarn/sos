@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sos/src/component/form_data.dart';
 
-
 class Signup extends StatefulWidget {
   const Signup({super.key});
 
@@ -108,7 +107,6 @@ class _SignupState extends State<Signup> {
                   ],
                 ),
               ),
-              // crossAxisAlignment: CrossAxisAlignment.center,
             ),
           ),
         ),
@@ -126,7 +124,11 @@ class _SignupState extends State<Signup> {
                 Form_Data("ID Card", 10, 0, 10, 0, TextInputType.number),
                 Container(
                   alignment: Alignment.centerLeft,
-                  child: Column(),
+                  child: Column(
+                    children: <Widget>[
+                      Text("asdasdasdasdsa12"),
+                    ],
+                  ),
                 )
               ],
             ),
