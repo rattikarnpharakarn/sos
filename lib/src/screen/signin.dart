@@ -7,6 +7,7 @@ import 'dart:convert' as convert;
 
 import 'package:http/http.dart' as http;
 import 'package:file/local.dart';
+import 'package:sos/src/screen/home.dart';
 import 'package:sos/src/screen/signupPhoneNumber.dart';
 
 class Signin extends StatefulWidget {
@@ -83,7 +84,7 @@ class _SigninState extends State<Signin> {
 
   onLogin() async {
     try {
-      final url = "http://sos-app.thddns.net:3770/SosApp/signIn";
+      final url = "http://10.0.2.2:81/SosApp/signIn";
       // final url = "http://localhost:8123//SosApp/signIn";
       // const url = "http://192.168.16.1:8123//SosApp/signIn";
 
@@ -182,6 +183,12 @@ class _SigninState extends State<Signin> {
                             borderRadius: BorderRadius.circular(15.29),
                             side: const BorderSide(
                                 width: 3, color: Colors.white)))),
+                    // onPressed: () {
+                    //   Navigator.push(context,
+                    //       MaterialPageRoute(builder: (context) {
+                    //     return const Home();
+                    //   }));
+                    // },
                     onPressed: onLogin,
                     child: const Text("Login",
                         style: TextStyle(color: Colors.black, fontSize: 24)),
